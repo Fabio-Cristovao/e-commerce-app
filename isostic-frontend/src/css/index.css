@@ -72,7 +72,23 @@ code {
   margin-bottom: 2rem;
 }
 
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.shopping-cart span {
+  display: flex;
+  font-size: 1.3rem;
+  gap: 15px;
+}
+
 .product-article .price-tag {
+  display: flex;
+  flex-direction: column;
   margin-top: auto;
   font-size: 1.4rem;
 }
