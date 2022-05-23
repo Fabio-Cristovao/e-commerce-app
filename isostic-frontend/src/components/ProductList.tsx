@@ -28,14 +28,16 @@ export default function ProductList(): React.Component {
     } else {
         return (
 
-            <div className='product-list-container'>
-                <h1>Product List</h1>
-                {
-                    productList.map(product => (
-                        < Product key={product.id} product={product} />
-                    ))
-                }
-            </div>
+            <>
+                <h1 className='product-container-title'>Product List</h1>
+                <div className='product-container'>
+                    {
+                        productList.map(product => (
+                            < Product key={product.id} product={product} />
+                        ))
+                    }
+                </div>
+            </>
 
         );
     }

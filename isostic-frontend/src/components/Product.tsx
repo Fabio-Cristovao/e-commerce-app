@@ -5,12 +5,12 @@ export default function Product(props) {
     let { title, category, description, image, price } = props.product;
 
     return (
-        <div className="product-article">
+        <article className="product-article">
             <h1>{title}</h1>
-            <p>{category}</p>
+            <p className='product-category'>{category}</p>
             <p>{description}</p>
             <img src={image} alt="Product Image" />
-            <p>{price}</p>
-        </div>
+            <p className='price-tag'>{price}</p>
+        </article>
     )
 }
