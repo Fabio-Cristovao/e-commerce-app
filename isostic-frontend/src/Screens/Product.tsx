@@ -10,7 +10,7 @@ export default function Product(props) {
     let { id, title, category, description, image, price } = props.product;
 
     return (
-        <article className="product-article">
+        <article className="product-article flex-wrap">
             <h1>{title}</h1>
             <p className='product-category'>{category}</p>
             <p>{description}</p>

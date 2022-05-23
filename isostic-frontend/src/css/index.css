@@ -16,21 +16,6 @@ code {
     monospace;
 }
 
-/* product grid styles */
-
-.product-container-title {
-  text-align: center;
-  font-size: 3rem;
-}
-
-.product-container {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1rem;
-}
-
 .product-container-title {
   font-size: 2rem;
   font-weight: bold;
