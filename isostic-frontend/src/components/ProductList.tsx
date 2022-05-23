@@ -1,26 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Product from './Product';
 
 export default function ProductList(): React.Component {
     const [productList, setProductList] = useState([]);
-
-    const getProducts = async () => {
-        const { data } = await axios.get(
-            'https://fakestoreapi.com/products?limit=5'
-        );
-        console.log(data);
-        setProductList(data);
-    };
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        getProducts();
-    }, []);
+        fetch('https://fakestoreapi.com/products')
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setProductList(result)
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, [])
 
-    return (
-        <div className='product-list-container'>
-            <h1>Product List</h1>
-            <Product />
-        </div>
-    );
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+        return <div>Loading...</div>;
+    } else {
+        return (
+
+            <div className='product-list-container'>
+                <h1>Product List</h1>
+                {
+                    productList.map(product => (
+                        < Product key={product.id} product={product} />
+                    ))
+                }
+            </div>
+
+        );
+    }
+
 }

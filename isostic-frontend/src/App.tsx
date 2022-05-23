@@ -5,7 +5,7 @@ import ProductList from './components/ProductList';
 function App() {
     return (
         <div className='App'>
-            <h1 className='text-3x1 font-bold underline text-red-600'>
+            <h1>
                 <ProductList />
             </h1>
         </div>
