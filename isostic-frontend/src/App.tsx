@@ -1,17 +1,27 @@
 import React from 'react';
 import './App.css';
-import ProductList from './Screens/ProductList';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import '../src/css/index.css';
 import Navbar from './Screens/Navbar';
+import Favorites from './Screens/Favorites';
+import ShoppingCart from './Screens/ShoppingCart';
+import Budgets from './Screens/Budgets';
+import AboutUs from './Screens/AboutUs';
+import HomeScreen from './Screens/HomeScreen';
 
 function App() {
     return (
         <>
-            <Navbar />
-            <div className='flex flex-col align-center'>
-                <h1 className='text-center text-3xl my-6'>Product List</h1>
-                <ProductList />
-            </div>
+            <Router>
+                <Navbar />
+                <Routes>
+                    <Route path='/' element={< HomeScreen />} />
+                    <Route path='/favorites' element={<Favorites />} />
+                    <Route path='/cart' element={<ShoppingCart />} />
+                    <Route path='/budget' element={<Budgets />} />
+                    <Route path='/aboutUs' element={<AboutUs />} />
+                </Routes>
+            </Router>
         </>
     );
 }

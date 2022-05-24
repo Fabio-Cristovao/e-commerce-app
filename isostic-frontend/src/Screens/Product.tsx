@@ -12,8 +12,6 @@ export default function Product(props) {
     return (
         <article className="product-article flex-wrap">
             <h1>{title}</h1>
-            <p className='product-category'>{category}</p>
-            <p>{description}</p>
             <img src={image} alt="Product Image" />
             <a href={`/product/${id}`}>Item Description</a>
             <div className='shopping-cart'>
