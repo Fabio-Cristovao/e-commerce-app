@@ -3,11 +3,11 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import '../src/css/index.css';
 import Navbar from './Screens/Navbar';
-import Favorites from './Screens/Favorites';
 import ShoppingCart from './Screens/ShoppingCart';
 import Budgets from './Screens/Budgets';
 import AboutUs from './Screens/AboutUs';
-import HomeScreen from './Screens/HomeScreen';
+import Home from './Screens/Home';
+import ProductList from './Screens/ProductList';
 
 function App() {
     return (
@@ -15,13 +15,14 @@ function App() {
             <Router>
                 <Navbar />
                 <Routes>
-                    <Route path='/' element={< HomeScreen />} />
-                    <Route path='/favorites' element={<Favorites />} />
+                    <Route path='/' element={< Home />} />
+                    <Route path='/products' element={<ProductList />} />
                     <Route path='/cart' element={<ShoppingCart />} />
                     <Route path='/budget' element={<Budgets />} />
                     <Route path='/aboutUs' element={<AboutUs />} />
                 </Routes>
             </Router>
+
         </>
     );
 }
