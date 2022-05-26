@@ -9,32 +9,6 @@ export default function Navbar() {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
 
     return (
-        /*  <div className="container max-w-6xl mx-auto">
-             <nav className="flex flex-wrap items-center justify-between w-full py-2 md: py-0 px-0 text-lg text-gray-700 bg-white">
-                 <div>
-                     <Link to="/">
-                         <img src="/img/Isosticlogo.svg" alt="" className="h-20 w-40 p-2" alt="Isostic Logo" />
-                     </Link>
-                 </div>
-                 <div>
-                     <IoIosMenu className="block md:hidden h-8 w-8 m-4" />
-                 </div>
- 
-                 <div className="hidden md:flex items-center">
-                     <ul className="flex flex-col items-center space-x-7 text-gray-700 p-2 ">
-                         <Link to="/">Products</Link>
-                         <Link to="/budgets">Budgets</Link>
-                         <Link to="/contacts">Contacts</Link>
-                         <Link to="/auth">Login</Link>
-                         <Link to="/shoppinCart"><FaShoppingCart style={style} /></Link>
-                     </ul>
-                 </div>
-             </nav>
-         </div> */
-
-
-
-
         <>
             <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white mb-3">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">

@@ -8,10 +8,13 @@ import Budgets from './Screens/Budgets';
 import AboutUs from './Screens/AboutUs';
 import Home from './Screens/Home';
 import ProductList from './Screens/ProductList';
+import Footer from './components/Footer';
+import Contacts from './Screens/Contacts';
+import Auth from './Screens/Auth';
 
 function App() {
     return (
-        <>
+        <div className="container m-w6xl mx-auto">
             <Router>
                 <Navbar />
                 <Routes>
@@ -19,11 +22,13 @@ function App() {
                     <Route path='/products' element={<ProductList />} />
                     <Route path='/cart' element={<ShoppingCart />} />
                     <Route path='/budget' element={<Budgets />} />
-                    <Route path='/aboutUs' element={<AboutUs />} />
+                    <Route path='/contacts' element={<Contacts />} />
+                    <Route path='/auth' element={<Auth />} />
                 </Routes>
+                <Footer />
             </Router>
 
-        </>
+        </div>
     );
 }
 
