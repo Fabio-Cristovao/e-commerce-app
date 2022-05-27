@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaBars, FaShoppingCart } from 'react-icons/fa'
+import { FaShoppingCart } from 'react-icons/fa'
 import { AiOutlineMenu } from "react-icons/ai";
 import { BiLogIn } from "react-icons/bi"
 export default function Navbar() {
@@ -16,8 +16,10 @@ export default function Navbar() {
                         <Link
                             className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
                             to="/"
+                            onClick={() => setNavbarOpen(!navbarOpen)}
                         >
                             <img src="./img/Isosticlogo.svg" className="h-24 w-30" alt="" />
+
                         </Link>
                         <button
                             className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -34,7 +36,8 @@ export default function Navbar() {
                         }
                         id="example-navbar-danger"
                     >
-                        <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+                        <ul className="flex flex-col lg:flex-row list-none lg:ml-auto"
+                            onClick={() => setNavbarOpen(!navbarOpen)}>
                             <li className="nav-item">
                                 <Link
                                     className="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-blue-600 hover:opacity-75"

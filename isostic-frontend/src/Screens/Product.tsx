@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdAddShoppingCart } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 
@@ -13,7 +14,11 @@ export default function Product(props) {
         <article className="product-article flex-wrap">
             <h1>{title}</h1>
             <img src={image} alt="Product Image" />
-            <a href={`/product/${id}`}>Item Description</a>
+            <p>
+                <Link to={`/products/${id}`}>
+                    Item description
+                </Link>
+            </p>
             <div className='shopping-cart'>
                 <span>
                     <p>Add to cart</p>

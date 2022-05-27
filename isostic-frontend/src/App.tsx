@@ -5,12 +5,12 @@ import '../src/css/index.css';
 import Navbar from './Screens/Navbar';
 import ShoppingCart from './Screens/ShoppingCart';
 import Budgets from './Screens/Budgets';
-import AboutUs from './Screens/AboutUs';
 import Home from './Screens/Home';
 import ProductList from './Screens/ProductList';
 import Footer from './components/Footer';
 import Contacts from './Screens/Contacts';
 import Auth from './Screens/Auth';
+import ProductDetail from './Screens/ProductDetail';
 
 function App() {
     return (
@@ -20,6 +20,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={< Home />} />
                     <Route path='/products' element={<ProductList />} />
+                    <Route path='/products/:id' element={<ProductDetail />} />
                     <Route path='/cart' element={<ShoppingCart />} />
                     <Route path='/budget' element={<Budgets />} />
                     <Route path='/contacts' element={<Contacts />} />

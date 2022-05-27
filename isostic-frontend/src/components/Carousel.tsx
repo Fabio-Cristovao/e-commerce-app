@@ -1,53 +1,62 @@
-import React, { useState } from 'react';
+import "react-multi-carousel/lib/styles.css";
+import Carousel from 'react-multi-carousel';
 
-export const CarouselItem = ({ children, width }) => {
-    return (
-        <div className="inline-flex items-center mt-5 justify-center h-96 bg-green-600 text-white" style={{ width: width }}>
-            {children}
-        </div>
-    );
-};
+import React from 'react'
 
-const Carousel = ({ children }) => {
-    const [activeIndex, setActiveIndex] = useState(0);
+export default function HeroCarousel(props) {
 
-    const updateIndex = (newIndex) => {
-        console.log('hit')
-        if (newIndex < 0) {
-            newIndex = 0;
-        } else if (newIndex >= React.Children.count(children)) {
-            newIndex = React.Children.count(children) - 1;
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3,
+            slidesToSlide: 3 // optional, default to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            slidesToSlide: 2 // optional, default to 1.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1 // optional, default to 1.
         }
-        setActiveIndex(newIndex)
-    }
-    return (
-        <div className="carousel overflow-hidden h-70">
-            <div className="whitespace-nowrap transition-transform " style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-                {React.Children.map(children, (child, index) => {
-                    return React.cloneElement(child, { width: "100%" });
-                })}
-            </div>
-            <div className="arrow-indicators flex justify-center m-7
-            ">
-                <button className="m-3"
-                    onClick={() => {
-                        updateIndex(activeIndex - 1);
-                    }}
-                >
-                    Prev
-                </button>
-                <button className="m-3"
-                    onClick={() => {
-                        updateIndex(activeIndex + 1);
-                    }}
-                >
-                    Next
-                </button>
-            </div>
-        </div>
-    );
-};
+    };
 
-export default Carousel;
+    const urlImgArray = [, "/img/img2.jpg", "/img/img3.jpg"]
+    return (
+        <Carousel
+            swipeable={false}
+            draggable={false}
+            showDots={true}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            autoPlay={props.deviceType !== "mobile" ? true : false}
+            autoPlaySpeed={8000}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            deviceType={props.deviceType}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+        >
+            <div style={{
+                backgroundImage: `url("/img/img1.jpg")`
+            }}
+                className="w-full">
+                <button>Click me!</button>
+            </div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+        </Carousel>
+    )
+}
+
+
+
 
 
