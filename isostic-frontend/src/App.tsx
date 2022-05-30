@@ -14,9 +14,11 @@ import ProductDetail from './Screens/ProductDetail';
 
 function App() {
     return (
-        <div className="container m-w6xl mx-auto">
-            <Router>
-                <Navbar />
+
+
+        <Router>
+            <Navbar />
+            <div className="container m-w6xl mx-auto">
                 <Routes>
                     <Route path='/' element={< Home />} />
                     <Route path='/products' element={<ProductList />} />
@@ -27,9 +29,10 @@ function App() {
                     <Route path='/auth' element={<Auth />} />
                 </Routes>
                 <Footer />
-            </Router>
+            </div >
+        </Router>
 
-        </div>
+
     );
 }
 
