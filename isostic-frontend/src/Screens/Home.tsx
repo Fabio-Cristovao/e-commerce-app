@@ -18,8 +18,8 @@ export default function Home() {
                         </Link>
                     </div>
                 </div>
-                <div className='flex-col gap-3 m-6'>
-                    <h1 className=' m-6 pt-6 text-6xl text-center text-sky-700 bold'>Custom Budgets!</h1>
+                <div className='flex-col gap-3 m-6 p-6'>
+                    <h1 className=' m-6 text-6xl text-center text-sky-700 bold'>Custom Budgets!</h1>
                     <p className='m-6 text-lg text-red-50 font-bold text-center'>Contact us so we cand find the best option based on your case, for free!</p>
                 </div>
             </div>
@@ -27,7 +27,7 @@ export default function Home() {
                 backgroundImage: `url('/img/hero.jpg')`
             }}>
                 <div className='flex-col gap-3 m-6 ml-8'>
-                    <h1 className=' m-6 pt-6 text-6xl text-center text-sky-700 bold'>Find out our products!</h1>
+                    <h1 className='py-4 text-6xl text-center text-sky-700 bold'>Find out our products!</h1>
                     <p className='m-6 text-lg font-bold text-center text-sky-900'>
                         We have a variety of products that ensures the fullfillment of even the more demanding customer.
                     </p>
@@ -46,8 +46,8 @@ export default function Home() {
                         <Link to='/contacts'> <button className='bg-sky-900 px-5 py-2 text-2xl text-red-50 rounded-lg border-4 shadow'>Contact Us!</button></Link>
                     </div>
                 </div>
-                <div className='flex-col gap-3 m-6'>
-                    <h1 className=' m-6 pt-6 text-6xl text-center text-sky-700 bold'>We're here for you!</h1>
+                <div className='flex-col gap-3 m-6 p-6'>
+                    <h1 className='py-4 text-6xl text-center text-sky-700 bold'>We're here for you!</h1>
                     <p className='m-6 text-lg text-red-50 font-bold text-center'>Feel free to contact us if you have any doubt on our services, products or any other question related to our company.</p>
                 </div>
             </div>
