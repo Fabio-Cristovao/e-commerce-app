@@ -9,7 +9,7 @@ export default function Contacts() {
             <h1 className="text-5xl text-sky-600 font-bold text-center py-10">We are here for you!</h1>
             <div className="flex w-full min-h-screen justify-center items-center">
                 <div className=" flex flex-col space-y-5 lg:flex-row lg:justify-between lg:space-y-0
-                 bg-sky-700 w-full max-w-6xl p-8 rounded-md shadow-lg ">
+                 bg-sky-700 w-full max-w-6xl p-8 rounded-md drop-shadow-lg ">
                     <div className="flex flex-col space-y-8 justify-between text-slate-50 lg:max-w-xl">
                         <div>
                             <h1 className="font-bold text-5xl tracking-wide text-center mb-6">Get in touch!</h1>
@@ -64,7 +64,7 @@ export default function Contacts() {
 
                             </div>
                             <div className="flex justify-center">
-                                <textarea className="ring-1 ring-stone-400 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-sky-700" name="" id="" rows="5" placeholder="Your message..."></textarea>
+                                <textarea className="ring-1 ring-stone-400 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-sky-700" rows="5" placeholder="Your message..."></textarea>
                             </div>
                             <button className="inline-block self-end bg-sky-700 text-white font-bold rounded-lg px-6 py-2 uppercase">
                                 Send message
@@ -73,7 +73,6 @@ export default function Contacts() {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }

@@ -49,11 +49,11 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link
                                     className="px-3 py-2 flex items-center text-base uppercase font-bold  text-sky-700 hover:opacity-75"
-                                    to="/budget"
+                                    to="/budgets"
                                 >
                                     <i className="fab fa-twitter text-lg leading-lg text-sky-700 opacity-75">
                                     </i>
-                                    <span className="ml-2 text-sm">Budget</span>
+                                    <span className="ml-2 text-sm">Budgets</span>
                                 </Link>
                             </li>
                             <li className="nav-item">
