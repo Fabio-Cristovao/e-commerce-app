@@ -11,28 +11,27 @@ import Footer from './components/Footer';
 import Contacts from './Screens/Contacts';
 import Auth from './Screens/Auth';
 import ProductDetail from './Screens/ProductDetail';
+import { AuthProvider } from './contexts/Auth/AuthProvider';
 
 function App() {
     return (
-
-
-        <Router>
-            <Navbar />
-            <div className="container m-w6xl mx-auto">
-                <Routes>
-                    <Route path='/' element={< Home />} />
-                    <Route path='/products' element={<ProductList />} />
-                    <Route path='/products/:id' element={<ProductDetail />} />
-                    <Route path='/cart' element={<ShoppingCart />} />
-                    <Route path='/budgets' element={<Budgets />} />
-                    <Route path='/contacts' element={<Contacts />} />
-                    <Route path='/auth' element={<Auth />} />
-                </Routes>
-                <Footer />
-            </div >
-        </Router>
-
-
+        <AuthProvider>
+            <Router>
+                <Navbar />
+                <div className="container m-w6xl mx-auto">
+                    <Routes>
+                        <Route path='/' element={< Home />} />
+                        <Route path='/products' element={<ProductList />} />
+                        <Route path='/products/:id' element={<ProductDetail />} />
+                        <Route path='/cart' element={<ShoppingCart />} />
+                        <Route path='/budgets' element={<Budgets />} />
+                        <Route path='/contacts' element={<Contacts />} />
+                        <Route path='/auth' element={<><Login /></>} />
+                    </Routes>
+                    <Footer />
+                </div >
+            </Router>
+        </AuthProvider>
     );
 }
 
