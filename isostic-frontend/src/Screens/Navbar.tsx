@@ -1,12 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaShoppingCart } from 'react-icons/fa'
 import { AiOutlineMenu } from "react-icons/ai";
-import { BiLogIn } from "react-icons/bi"
+import { BiLogIn, BiLogOut } from "react-icons/bi"
+import { MdFavorite } from "react-icons/md"
+import { AuthContext } from '../contexts/Auth/AuthContext';
 export default function Navbar() {
+    const auth = useContext(AuthContext);
+    const navigate = useNavigate();
 
+    const handleLogout = async () => {
+        await auth.signout();
+        navigate("/");
+    }
 
     const [navbarOpen, setNavbarOpen] = React.useState(false);
+
 
     return (
         <div className="bg-slate-50 w-full shadow h-30">
@@ -67,20 +76,50 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link
                                     className="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-sky-700 hover:opacity-75"
-                                    to="/cart"
+                                    to="/orders"
                                 >
-                                    < FaShoppingCart className=" text-sky-700 opacity-75 h-7 w-7" />
+                                    <i className="fab fa-pinterest text-lg leading-lg text-sky-700 opacity-75"></i><span className="ml-2 text-sm">Orders</span>
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link
                                     className="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-sky-700 hover:opacity-75"
-                                    to="/auth"
+                                    to="/favorites"
                                 >
-                                    <BiLogIn className=" text-sky-700 opacity-75 h-7 w-7" />
-
+                                    < MdFavorite className=" text-sky-700 opacity-75 h-7 w-7" />
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-sky-700 hover:opacity-75"
+                                    to="/cart"
+                                >
+                                    < FaShoppingCart className=" text-sky-700 opacity-75 h-7 w-7" />
+                                </Link>
+                            </li>
+                            {!auth.user &&
+                                <li className="nav-item">
+                                    <Link
+                                        className="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-sky-700 hover:opacity-75"
+                                        to="/auth"
+                                    >
+                                        <BiLogIn className=" text-sky-700 opacity-75 h-7 w-7" />
+                                    </Link>
+                                </li>
+                            }
+                            {auth.user &&
+                                <li className="nav-item">
+                                    <Link
+                                        className="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-sky-700 hover:opacity-75"
+                                        to="/home"
+                                    >
+                                        <BiLogOut
+                                            className=" text-sky-700 opacity-75 h-7 w-7"
+                                            onClick={handleLogout}
+                                        />
+                                    </Link>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>

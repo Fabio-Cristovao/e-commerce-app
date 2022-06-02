@@ -9,9 +9,12 @@ import Home from './Screens/Home';
 import ProductList from './Screens/ProductList';
 import Footer from './components/Footer';
 import Contacts from './Screens/Contacts';
-import Auth from './Screens/Auth';
 import ProductDetail from './Screens/ProductDetail';
 import { AuthProvider } from './contexts/Auth/AuthProvider';
+import Login from './Screens/Login';
+import Favorites from './Screens/Favorites';
+import { RequireAuth } from './contexts/Auth/RequireAuth';
+import Orders from './Screens/Orders';
 
 function App() {
     return (
@@ -24,7 +27,14 @@ function App() {
                         <Route path='/products' element={<ProductList />} />
                         <Route path='/products/:id' element={<ProductDetail />} />
                         <Route path='/cart' element={<ShoppingCart />} />
+                        <Route path='/favorites' element={
+                            <RequireAuth>
+                                <Favorites />
+                            </RequireAuth>
+                        }
+                        />
                         <Route path='/budgets' element={<Budgets />} />
+                        <Route path='/orders' element={< Orders />} />
                         <Route path='/contacts' element={<Contacts />} />
                         <Route path='/auth' element={<><Login /></>} />
                     </Routes>
