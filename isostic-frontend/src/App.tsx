@@ -18,30 +18,29 @@ import Orders from './Screens/Orders';
 
 function App() {
     return (
-        <AuthProvider>
-            <Router>
-                <Navbar />
-                <div className="container m-w6xl mx-auto">
-                    <Routes>
-                        <Route path='/' element={< Home />} />
-                        <Route path='/products' element={<ProductList />} />
-                        <Route path='/products/:id' element={<ProductDetail />} />
-                        <Route path='/cart' element={<ShoppingCart />} />
-                        <Route path='/favorites' element={
-                            <RequireAuth>
-                                <Favorites />
-                            </RequireAuth>
-                        }
-                        />
-                        <Route path='/budgets' element={<Budgets />} />
-                        <Route path='/orders' element={< Orders />} />
-                        <Route path='/contacts' element={<Contacts />} />
-                        <Route path='/auth' element={<><Login /></>} />
-                    </Routes>
-                    <Footer />
-                </div >
-            </Router>
-        </AuthProvider>
+
+        <Router>
+            <Navbar />
+            <div className="container m-w6xl mx-auto">
+                <Routes>
+                    <Route path='/' element={< Home />} />
+                    <Route path='/products' element={<ProductList />} />
+                    <Route path='/products/:id' element={<ProductDetail />} />
+                    <Route path='/cart' element={<ShoppingCart />} />
+                    <Route path='/favorites' element={
+                        <RequireAuth>
+                            <Favorites />
+                        </RequireAuth>
+                    }
+                    />
+                    <Route path='/budgets' element={<Budgets />} />
+                    <Route path='/orders' element={< Orders />} />
+                    <Route path='/contacts' element={<Contacts />} />
+                    <Route path='/auth' element={<><Login /></>} />
+                </Routes>
+                <Footer />
+            </div >
+        </Router>
     );
 }
 

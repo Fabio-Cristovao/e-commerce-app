@@ -11,17 +11,21 @@ export default function Login() {
 
 
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         console.log(email, password)
-        if (email && password) {
-            const isLogged = auth.signin(email, password);
-            console.log(isLogged)
-            if (isLogged) {
-                navigate("/")
-            } else {
-                alert("error")
+        try {
+            if (email && password) {
+                const isLogged = await auth.signin(email, password);
+                console.log(isLogged)
+                if (isLogged) {
+                    navigate("/")
+                }
             }
+        } catch (error) {
+            console.log(error);
         }
+
+
 
         console.log(email, password);
     }
