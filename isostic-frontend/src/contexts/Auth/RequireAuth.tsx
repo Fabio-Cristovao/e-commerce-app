@@ -9,7 +9,5 @@ export const RequireAuth = ({ children }: { children: JSX.Element }) => {
     if (!auth.user) {
         return <Login />;
     }
-
-
     return children;
 }

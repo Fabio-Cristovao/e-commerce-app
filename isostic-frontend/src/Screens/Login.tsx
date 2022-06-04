@@ -10,24 +10,18 @@ export default function Login() {
     const [password, setPassword] = useState('');
 
 
-
     const handleLogin = async () => {
         console.log(email, password)
-        try {
-            if (email && password) {
-                const isLogged = await auth.signin(email, password);
-                console.log(isLogged)
-                if (isLogged) {
-                    navigate("/")
-                }
+
+        if (email && password) {
+            const isLogged = await auth.signin(email, password);
+            console.log(isLogged)
+            if (isLogged) {
+                navigate("/")
+            } else {
+                alert("an error ocurred");
             }
-        } catch (error) {
-            console.log(error);
         }
-
-
-
-        console.log(email, password);
     }
 
     return (
@@ -55,3 +49,5 @@ export default function Login() {
         </div>
     )
 }
+
+
