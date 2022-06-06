@@ -19,17 +19,16 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
             }
         }
         validateToken();
-    }, [api])
+    }, [])
 
     const signin = async (email: string, password: string) => {
         const data = await api.signin(email, password);
-        console.log(data)
-        console.log(data.user, data.token)
+        console.log(data.user, data.token);
 
         if (data.user && data.token) {
             setUser(data.user);
             setToken(data.token);
-            console.log(user.name, password);
+            console.log(data.user, password);
             return true;
         }
         return false;
