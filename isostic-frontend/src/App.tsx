@@ -10,7 +10,6 @@ import ProductList from './Screens/ProductList';
 import Footer from './components/Footer';
 import Contacts from './Screens/Contacts';
 import ProductDetail from './Screens/ProductDetail';
-import { AuthProvider } from './contexts/Auth/AuthProvider';
 import Login from './Screens/Login';
 import Favorites from './Screens/Favorites';
 import { RequireAuth } from './contexts/Auth/RequireAuth';
@@ -23,7 +22,7 @@ function App() {
             <Navbar />
             <div className="container m-w6xl mx-auto">
                 <Routes>
-                    <Route path='/' element={< Home />} />
+                    <Route path='/' element={<Home />} />
                     <Route path='/products' element={<ProductList />} />
                     <Route path='/products/:id' element={<ProductDetail />} />
                     <Route path='/cart' element={<ShoppingCart />} />

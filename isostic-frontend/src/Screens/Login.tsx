@@ -11,13 +11,12 @@ export default function Login() {
 
 
     const handleLogin = async () => {
-        console.log(email, password)
-
         if (email && password) {
             const isLogged = await auth.signin(email, password);
-            console.log(isLogged)
+
             if (isLogged) {
-                navigate("/")
+                console.log('islogged')
+                navigate('/');
             } else {
                 alert("an error ocurred");
             }

@@ -23,23 +23,27 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
 
     const signin = async (email: string, password: string) => {
         const data = await api.signin(email, password);
-        console.log(data.user.token)
-        if (data.user && data.user.token) {
+        console.log(data)
+        console.log(data.user, data.token)
+
+        if (data.user && data.token) {
             setUser(data.user);
-            setToken(data.user.token);
+            setToken(data.token);
+            console.log(user.name, password);
             return true;
         }
-        return false
+        return false;
+
     }
 
     const signout = async () => {
-        await api.logout();
         setUser(null);
         setToken('');
+        await api.logout();
     }
 
     const setToken = (token: string) => {
-        localStorage.setItem("authToken", token)
+        localStorage.setItem("authToken", token);
     }
     return (
         <AuthContext.Provider value={{ user, signin, signout }}>
