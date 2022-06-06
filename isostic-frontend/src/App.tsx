@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import '../src/css/index.css';
@@ -14,8 +14,10 @@ import Login from './Screens/Login';
 import Favorites from './Screens/Favorites';
 import { RequireAuth } from './contexts/Auth/RequireAuth';
 import Orders from './Screens/Orders';
+import { AuthContext } from './contexts/Auth/AuthContext';
 
 function App() {
+
     return (
 
         <Router>
