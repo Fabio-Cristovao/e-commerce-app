@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import HomeImg1 from '../img/img2.jpg'
+import HomeImg2 from '../img/hero.jpg'
+import HomeImg3 from '../img/img2.jpg'
 
 export default function Home() {
 
@@ -7,7 +10,7 @@ export default function Home() {
         <section className='w-full h-auto'>
             <div className=' m-5 md:flex md:gap-5 bg-stone-400 shadow rounded-lg md:justify-center md:align-center'>
                 <div style={{
-                    backgroundImage: `url('/img/img3.jpg')`
+                    backgroundImage: `url(${HomeImg1})`
                 }} className='w-full rounded-lg flex justify-center items-center bg-no-repeat bg-cover h-96'>
                     <div>
                         <Link to='/budgets'>
@@ -22,7 +25,7 @@ export default function Home() {
                 </div>
             </div>
             <div className=' m-5 md:flex md:gap-5 bg-stone-400 shadow rounded-lg md:justify-center md:align-center bg-cover bg-no-repeat h-96' style={{
-                backgroundImage: `url('/img/hero.jpg')`
+                backgroundImage: `url(${HomeImg2})`
             }}>
                 <div className='flex-col gap-3 m-6 ml-8'>
                     <h1 className='py-4 text-6xl text-center text-sky-700 bold'>Find out our products!</h1>
@@ -38,8 +41,8 @@ export default function Home() {
             </div>
             <div className=' m-5 md:flex md:gap-5 bg-stone-400 shadow rounded-lg md:justify-center md:align-center'>
                 <div style={{
-                    backgroundImage: `url('/img/img2.jpg')`
-                }} className='w-full rounded-lg flex justify-center items-center bg-no-repeat bg-cover h-96'>
+                    backgroundImage: `url(${HomeImg3})`
+                }} className='w-full rounded-lg flex justify-center items-center bg-no-repeat bg-cover'>
                     <div>
                         <Link to='/contacts'> <button className='bg-sky-900 px-5 py-2 text-2xl text-red-50 rounded-lg border-4 shadow'>Contact Us!</button></Link>
                     </div>

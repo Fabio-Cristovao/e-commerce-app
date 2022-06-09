@@ -5,6 +5,8 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { BiLogIn, BiLogOut } from "react-icons/bi"
 import { MdFavorite } from "react-icons/md"
 import { AuthContext } from '../contexts/Auth/AuthContext';
+import Logo from '../img/Isosticlogo.svg';
+
 export default function Navbar() {
     const auth = useContext(AuthContext);
     const navigate = useNavigate();
@@ -26,8 +28,7 @@ export default function Navbar() {
                             className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-bg-red-50"
                             to="/"
                         >
-                            <img src="./img/Isosticlogo.svg" className="h-11 w-30" alt="" />
-
+                            <img src={Logo} className="h-11 w-30" alt="" />
                         </Link>
                         <button
                             className="text-grey-50 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
