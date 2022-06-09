@@ -14,6 +14,7 @@ export default function Login() {
     }
 
     const handlePasswordInput = (event: ChangeEvent<HTMLInputElement>) => {
+        console.log('writting')
         setPassword(event.target.value)
     }
 
@@ -23,7 +24,7 @@ export default function Login() {
 
             if (isLogged) {
                 console.log("is logged");
-                navigate('/contacts');
+                navigate('/');
             } else {
                 alert("an error ocurred");
             }
@@ -36,30 +37,28 @@ export default function Login() {
             <div className="relative w-full h-screen bg-zinc-900/60">
                 <img className="absolute w-full h-full object-cover mix-blend-overlay" src={LoginImg} alt="" />
                 <div className="flex justify-center items-center h-full">
-                    <form className="max-w-[400px] h-full mx-auto bg-slate-50 p-8 px-8 rounded-lg" action="">
-                        <h2 className="text-4xl dark:text-white font-bold text-center capitalize">signin</h2>
-                        <div>
+                    <form className="max-w-[400px] h-full mx-auto p-8 px-8 rounded-lg flex flex-col items-center justify-center" action="">
+                        <h2 className="text-4xl font-bold text-center text-slate-50 capitalize py-4">signin</h2>
+                        <div className='flex flex-col mb-4 relative'>
                             <input
-                                className="rounded-lg bg-gray -700 mt-2 p-2 focus :border-blue-500 focus:bg-gray-800 focus:outline-none "
+                                className="rounded-lg bg-slate-50 mt-2 p-2 focus:outline-none"
                                 type="text"
-                                value={email}
                                 placeholder="Insert your e-mail address"
                                 onChange={handleEmailInput}
                             />
                         </div>
-                        <div>
+                        <div className='flex flex-col mb-4 relative'>
                             <input
-                                className="rounded-lg bg-gray -700 mt-2 p-2 focus :border-blue-500 focus:bg-gray-800 focus:outline-none "
+                                className="rounded-lg mt-2 p-2  focus:outline-none "
                                 type="password"
-                                value={password}
                                 placeholder="Insert your password"
                                 onChange={handlePasswordInput}
                             />
                         </div>
-                        <button onClick={handleLogin}>
+                        <button className='relative bg-sky-900 text-slate-50 rounded-lg py-2 w-48 ' onClick={handleLogin}>
                             Log in
                         </button>
-                        <p>Not a member yet? Signup</p>
+                        <p className='relative text-slate-50 mt-2'>Not a member yet? Signup</p>
                     </form>
                 </div>
             </div>
