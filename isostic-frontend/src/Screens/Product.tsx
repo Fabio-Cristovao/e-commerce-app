@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function Product(props) {
+export default function Product(props: any) {
 
     const style = { color: "rgb(0, 94, 255)", fontSize: "1.8rem" };
 

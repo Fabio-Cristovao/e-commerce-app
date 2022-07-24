@@ -61,10 +61,9 @@ export default function Contacts() {
                             </div>
                             <div>
                                 <input type="text" placeholder="Your Email Address..." className="ring-1 ring-stone-400 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-sky-700" />
-
                             </div>
                             <div className="flex justify-center">
-                                <textarea className="ring-1 ring-stone-400 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-sky-700" rows="5" placeholder="Your message..."></textarea>
+                                <textarea className="ring-1 ring-stone-400 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-sky-700" rows={5} placeholder="Your message..."></textarea>
                             </div>
                             <button className="inline-block self-end bg-sky-700 text-white font-bold rounded-lg px-6 py-2 uppercase">
                                 Send message
@@ -72,7 +71,7 @@ export default function Contacts() {
                         </form>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
