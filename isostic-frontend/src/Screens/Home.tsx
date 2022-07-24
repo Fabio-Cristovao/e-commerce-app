@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import HomeImg1 from './../img/img2.jpg';
-import HomeImg2 from './../img/hero.jpg';
-import HomeImg3 from './../img/img2.jpg';
+import HomeImg1 from '../img/img2.jpg';
+import HomeImg2 from '../img/hero.jpg';
+import HomeImg3 from '../img/img2.jpg';
 
 export default function Home() {
 
