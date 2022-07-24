@@ -1,6 +1,6 @@
 {
     "name": "isostic-frontend",
-    "homepage": "https://github.com/fabio-cristovao/e-commerce-app-frontend.github.io/",
+    "homepage": "https://fabio-cristovao.github.io/e-commerce-app-frontend/",
     "proxy": "http://localhost:3000",
     "version": "0.1.0",
     "private": true,
