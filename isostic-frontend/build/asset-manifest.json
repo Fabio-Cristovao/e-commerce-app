@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/e-commerce-app-frontend/static/css/main.af3b1885.css",
+    "main.js": "/e-commerce-app-frontend/static/js/main.ecf823f2.js",
+    "static/media/login.jpg": "/e-commerce-app-frontend/static/media/login.5bcba2640224ebadccd6.jpg",
+    "static/media/img2.jpg": "/e-commerce-app-frontend/static/media/img2.9d271c2332686ec47a91.jpg",
+    "static/media/hero.jpg": "/e-commerce-app-frontend/static/media/hero.0588c7c99ddb43d72268.jpg",
+    "static/media/Isosticlogo.svg": "/e-commerce-app-frontend/static/media/Isosticlogo.81f34404b73bb9b50a21ff52db41fc67.svg",
+    "index.html": "/e-commerce-app-frontend/index.html",
+    "main.af3b1885.css.map": "/e-commerce-app-frontend/static/css/main.af3b1885.css.map",
+    "main.ecf823f2.js.map": "/e-commerce-app-frontend/static/js/main.ecf823f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af3b1885.css",
+    "static/js/main.ecf823f2.js"
+  ]
+}
