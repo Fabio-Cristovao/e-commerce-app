@@ -25,6 +25,7 @@ function App() {
             <div className="container m-w6xl mx-auto">
                 <Routes>
                     <Route path='/' element={<Home />} />
+                    <Route path='/e-commerce-app-frontend/' element={<Home />} />
                     <Route path='/products' element={<ProductList />} />
                     <Route path='/products/:title' element={<ProductDetail />} />
                     <Route path='/cart' element={<ShoppingCart />} />
